@@ -1,0 +1,75 @@
+<html>
+<head>
+<title>calculator</title>
+<link rel="stylesheet" href="cal.css">
+</head>
+<div align="center">
+<form onsubmit="javascript:cal(document.getElementById('valueshow').value);return false;">
+<table align="center" border=2>
+<body>
+<tr>
+<td colspan="4"><input id="valueshow" type="text" value="0" />
+</tr>
+<tr>
+<td><input class="bgclear" onclick="cals(this.value);" type="button" value="C" />
+<td><input class="bgoperationcolor" onclick="cals(this.value);" type="button" value="+/-" />
+<td><input class="bgoperationcolor" onclick="cals(this.value);" type="button" value="%" />
+<td><input class="bgoperationcolor" onclick="cals(this.value);" type="button" value="/" />
+</tr>
+<tr>
+<td><input class="bgcolornumber" onclick="cals(this.value);" type="button" value="7" />
+<td><input class="bgcolornumber" onclick="cals(this.value);" type="button" value="8" />
+<td><input class="bgcolornumber" onclick="cals(this.value);" type="button" value="9" />
+<td><input class="bgoperationcolor" onclick="cals('*');" type="button" value="x" />
+</tr>
+<tr>
+<td><input class="bgcolornumber" onclick="cals(this.value);" type="button" value="6" />
+<td><input class="bgcolornumber" onclick="cals(this.value);" type="button" value="5" />
+<td><input class="bgcolornumber" onclick="cals(this.value);" type="button" value="4" />
+<td><input class="bgoperationcolor" onclick="cals(this.value);" type="button" value="-" />
+
+</tr>
+<tr>
+<td><input class="bgcolornumber" onclick="cals(this.value);" type="button" value="1" />
+<td><input class="bgcolornumber" onclick="cals(this.value);" type="button" value="2" />
+<td><input class="bgcolornumber" onclick="cals(this.value);" type="button" value="3" />
+<td><input class="bgoperationcolor" onclick="cals(this.value);" type="button" value="+" />
+</tr>
+<tr>
+<td colspan="2"><input class="bgcolornumber" onclick="cals(this.value);" type="button" value="0" />
+<td><input class="bgcolornumber" onclick="cals(this.value);" type="button" value="." />
+<td colspan="4"><input class="equal" onclick="cal(document.getElementById('valueshow').value);" type="button" value="=" />
+
+<script type="text/javascript">
+function cals(buttonValue)
+{
+if (buttonValue == 'C')
+{
+   document.getElementById('valueshow').value = '0';
+}
+else
+  {
+    if(document.getElementById('valueshow').value == '0')
+ {
+   document.getElementById('valueshow').value = buttonValue;
+}
+
+  else
+   {
+
+    document.getElementById('valueshow').value += buttonValue;
+   }
+  }
+ }
+  function cal(equation)
+
+  {
+  var answer = eval(equation);
+document.getElementById('valueshow').value = answer;
+ }
+ </script>
+</body>
+</table>
+</form>
+</div>
+</html>
